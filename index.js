@@ -1,7 +1,6 @@
-const { pickFile, viewLogo } = require('./src/dialogs')
+const { pickFile, viewLogo, log } = require('./src/dialogs')
 const removeAllCycles = require('./src/algorithm')
 const loadGraph = require('./src/utils/loadGraph')
-const log = require('./src/utils/log')
 
 viewLogo()
 pickFile()

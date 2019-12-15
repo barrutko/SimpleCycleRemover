@@ -1,4 +1,5 @@
 const findValueToReduce = require('./findValueToReduce')
+const { logCycle } = require('../dialogs')
 
 function removeCycle (graph, cycle) {
   let valueToReduce = findValueToReduce(graph, cycle)
@@ -11,6 +12,7 @@ function removeCycle (graph, cycle) {
       }
     }
   })
+  logCycle(cycle, valueToReduce)
   return graph
 }
 

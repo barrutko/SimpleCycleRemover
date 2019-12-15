@@ -1,0 +1,16 @@
+{
+  "name": "SimpleCycleRemover",
+  "version": "1.0.0",
+  "description": "Simple tool removing cycles from directed graph",
+  "main": "index.js",
+  "author": "Anze1m",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "inquirer": "^7.0.1"
+  }
+}

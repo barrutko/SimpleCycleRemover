@@ -1,10 +1,16 @@
 const { pickFile, viewLogo, log } = require('./src/dialogs')
 const removeAllCycles = require('./src/algorithm')
-const loadGraph = require('./src/utils/loadGraph')
+const { loadGraph, checkIfShouldContinue } = require('./src/utils')
 
-viewLogo()
-pickFile()
-  .then(dialogResult => loadGraph(dialogResult.pickedFile))
+function runApp () {  
+  pickFile()
+  .then(checkIfShouldContinue)
+  .then(loadGraph)
   .then(log('Original graph'))
   .then(removeAllCycles)
   .then(log('Reduced graph'))
+  .then(runApp)
+}
+
+viewLogo()
+runApp()

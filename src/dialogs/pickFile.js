@@ -1,5 +1,5 @@
 const inquirer = require('inquirer')
-const getAvailableGraphList = require('../utils/getAvailableGraphList')
+const { getAvailableGraphList } = require('../utils')
 
 function pickFile () {
   availableGraphList = getAvailableGraphList()
@@ -7,10 +7,13 @@ function pickFile () {
       type: 'list',
       name: 'pickedFile',
       message: 'Pick graph file',
-      choices: availableGraphList.map(file => ({
+      choices: [... availableGraphList.map(file => ({
         name: file,
-        value:file
-      }))
+        value: file,
+      })), {
+        name: 'QUIT APP',
+        value: -1
+      }]
     }])
 }
 

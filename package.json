@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "nexe": "^3.3.2"
+  },
+  "engines": {
+    "node": "10.16.2"
   }
 }

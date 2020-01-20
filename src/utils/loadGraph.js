@@ -1,5 +1,5 @@
 function loadGraph (name) {
-  return require(`../../graphs/${name}.json`)
+  return JSON.parse(JSON.stringify(require(`../../graphs/${name}.json`)))
 }
 
 module.exports = loadGraph

@@ -8,14 +8,15 @@
   "private": false,
   "scripts": {
     "start": "node index.js",
-    "build": "nexe ./index.js -r \"./graphs\" -o RUN -t \"win32-x86-10.13.0\""
+    "build": "yarn pkg -t node10-win index.js -o RUN_WINDOWS",
+    "build:mac": "yarn pkg -t node10-mac index.js -o RUN_MAC"
   },
   "dependencies": {
     "chalk": "^3.0.0",
     "inquirer": "^7.0.1"
   },
   "devDependencies": {
-    "nexe": "^3.3.2"
+    "pkg": "^4.4.2"
   },
   "engines": {
     "node": "10.16.2"
